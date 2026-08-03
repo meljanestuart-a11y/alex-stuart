@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex Stuart | A Life of Sport & Service</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Chosen Palette: Scottish Heritage (Slate Blue, Warm Cream, Charcoal, and subtle Tangerine) -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap');
+
+        :root {
+            --slate-blue: #334155;
+            --warm-cream: #f8fafc;
+            --charcoal: #1e293b;
+            --tangerine: #f59e0b;
+            --stone-gray: #64748b;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--warm-cream);
+            color: var(--charcoal);
+            scroll-behavior: smooth;
+        }
+
+        .serif-heading {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--tangerine);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .photo-placeholder {
+            background-color: #e2e8f0;
+            border: 2px dashed #cbd5e1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #94a3b8;
+            border-radius: 1rem;
+            overflow: hidden;
+        }
+
+        .photo-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body class="selection:bg-orange-100">
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/90 border-b border-slate-200 backdrop-blur-md">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center">
+            <div class="flex items-center gap-3 mb-4 md:mb-0">
+                <div class="bg-slate-800 text-white p-2 rounded font-bold text-xl">AS</div>
+                <div class="leading-tight">
+                    <span class="block font-bold text-slate-800 tracking-tight uppercase">Alex Stuart</span>
+                    <span class="text-[10px] uppercase tracking-widest text-orange-600 font-semibold italic">A Life of Service</span>
+                </div>
+            </div>
+            <div class="flex gap-8 text-xs font-bold uppercase tracking-widest text-slate-500">
+                <button onclick="showSection('intro')" id="btn-intro" class="nav-link active">The Life</button>
+                <button onclick="showSection('football')" id="btn-football" class="nav-link">The Pitch</button>
+                <button onclick="showSection('leisure')" id="btn-leisure" class="nav-link">The City</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto px-6 py-12">
+        
+        <!-- SECTION: INTRO -->
+        <section id="intro" class="section-block fade-in">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-20">
+                <div class="lg:col-span-7">
+                    <span class="text-orange-600 font-bold tracking-tighter text-sm uppercase">Biographical Overview</span>
+                    <h1 class="serif-heading text-5xl md:text-7xl mt-4 mb-8 leading-tight">Sporting excellence meets civic duty.</h1>
+                    <p class="text-lg text-slate-600 leading-relaxed mb-6">
+                        Alexander Stuart (1940–2017) was a pivotal figure in Scottish sport. As a player for Dundee F.C. during their most successful era and later as the city's Director of Leisure, he oversaw a transformation in how the public engaged with sport and recreation.
+                    </p>
+                    <div class="flex flex-wrap gap-4 mb-8">
+                        <div class="px-4 py-2 bg-slate-100 rounded-full text-xs font-bold text-slate-600 border border-slate-200">League Champion 1961-62</div>
+                        <div class="px-4 py-2 bg-slate-100 rounded-full text-xs font-bold text-slate-600 border border-slate-200">European Semi-Finalist</div>
+                    </div>
+                </div>
+                <div class="lg:col-span-5">
+                    <div class="photo-placeholder aspect-[4/5] shadow-2xl relative">
+                        <!-- User's updated photo -->
+                        <img src="DFC.jpg" alt="Alex Stuart Portrait">
+                        <div class="absolute bottom-4 right-4 bg-white/80 px-3 py-1 text-[10px] rounded uppercase font-bold text-slate-500">© Stuart Family Archive</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 items-center">
+                <div class="p-8 bg-slate-800 rounded-3xl text-white">
+                    <h3 class="text-orange-400 font-bold uppercase text-xs tracking-widest mb-4">The Integrity Choice</h3>
+                    <p class="italic text-lg leading-relaxed">
+                        "In 1977, Alex was the first choice for the Aberdeen managerial post. He declined because he had given his word to stay at Ayr United. This decision changed the course of Scottish football history."
+                    </p>
+                </div>
+                <div class="photo-placeholder h-64">
+                    <!-- User's updated photo -->
+                    <img src="1977 Football PErsonality of the month.jpg" alt="Newspaper Archive Photo">
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: FOOTBALL -->
+        <section id="football" class="section-block hidden fade-in">
+            <div class="mb-12">
+                <h2 class="serif-heading text-4xl mb-4">The Pitch: Athlete and Architect</h2>
+                <p class="text-slate-600 max-w-3xl leading-relaxed">
+                    Stuart's playing days were defined by his role as a "modern" left-back—one who defended with grit but attacked with intelligence. As a manager, he was a master of "financial engineering," ensuring small clubs survived through astute scouting and sales.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+                <div class="p-8 bg-white border border-slate-200 rounded-3xl shadow-sm">
+                    <h3 class="font-bold text-lg text-slate-800 mb-8">Career Goal Distribution</h3>
+                    <div class="chart-container">
+                        <canvas id="careerChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="flex flex-col gap-8">
+                    <div class="photo-placeholder flex-grow h-48">
+                        <!-- User's updated photo -->
+                        <img src="1970 Montrose FC.jpg" alt="Historical Team Photo">
+                    </div>
+                    <div class="p-8 bg-slate-100 rounded-3xl border border-slate-200">
+                        <h3 class="font-bold text-lg mb-4 text-slate-800">Financial Sustainability</h3>
+                        <p class="text-sm text-slate-600 mb-6 italic text-center">Transfer profits generated at Montrose F.C.</p>
+                        <div class="chart-container !h-[180px]">
+                            <canvas id="profitChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: LEISURE (Restored missing code) -->
+        <section id="leisure" class="section-block hidden fade-in">
+            <div class="mb-12">
+                <h2 class="serif-heading text-4xl mb-4">The City: Director of Leisure</h2>
+                <p class="text-slate-600 max-w-3xl leading-relaxed">
+                    In 1980, Alex retired from football management to serve the public. Over 21 years, he professionalised the Leisure and Recreation Department, building a legacy of infrastructure that remains the backbone of Dundee's sporting community.
+                </p>
+            </div>
+
+            <div class="bg-slate-900 text-white rounded-3xl p-10">
+                <h3 class="text-2xl font-bold mb-6">A Legacy of Inclusion</h3>
+                <div class="grid grid-cols-1 gap-12">
+                    <div>
+                        <p class="text-slate-300 mb-6 leading-relaxed">
+                            Alex believed sport belonged to everyone. He pioneered the "Sports Association for the Disabled" and modernised park maintenance across the city, ensuring safe spaces for the youth of Dundee.
+                        </p>
+                        <ul class="space-y-3 text-sm text-slate-400">
+                            <li class="flex items-center gap-3">
+                                <span class="text-orange-500 font-bold">✓</span> Established the Dundee Youth Academy
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="text-orange-500 font-bold">✓</span> Introduced city-wide jogging initiatives
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="text-orange-500 font-bold">✓</span> Managed over £15m in infrastructure investment
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-white border-t border-slate-200 py-16 mt-20">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <h2 class="serif-heading text-3xl mb-2">Alex Stuart</h2>
+            <p class="text-xs tracking-widest uppercase text-slate-400 mb-12">1940 — 2017</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-left text-slate-500 text-xs leading-relaxed mb-12">
+                <div>
+                    <h4 class="font-bold text-slate-800 uppercase mb-4 tracking-wider">Copyright Notice</h4>
+                    <p>© 2024 Stuart Family Archive. All rights reserved. No part of this interactive biography may be reproduced or transmitted in any form without prior written permission from the estate.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-slate-800 uppercase mb-4 tracking-wider">Image Attributions</h4>
+                    <p>All family photographs provided by the Stuart Family. Historical action photography and civic event imagery are used with permission/licence from local press archives. Specific credits are indicated on individual items.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-slate-800 uppercase mb-4 tracking-wider">Historical Accuracy</h4>
+                    <p>Statistics and biographical data are cross-referenced with Dundee F.C. Hall of Fame records and Dundee City Council archives. Produced as a commemorative digital archive.</p>
+                </div>
+            </div>
+
+            <p class="text-[10px] text-slate-300 uppercase tracking-tighter">Site designed for the Alex Stuart Estate</p>
+        </div>
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('.section-block').forEach(section => section.classList.add('hidden'));
+            document.getElementById(sectionId).classList.remove('hidden');
+
+            document.querySelectorAll('.nav-link').forEach(btn => btn.classList.remove('active', 'text-slate-800'));
+            document.getElementById('btn-' + sectionId).classList.add('active', 'text-slate-800');
+
+            if (sectionId === 'football') {
+                initCharts();
+            }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        let careerChart, profitChart;
+
+        function initCharts() {
+            if (careerChart) careerChart.destroy();
+            if (profitChart) profitChart.destroy();
+
+            const careerCtx = document.getElementById('careerChart').getContext('2d');
+            careerChart = new Chart(careerCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['League', 'Scottish Cup', 'League Cup', 'Europe'],
+                    datasets: [{
+                        label: 'Competitive Goals',
+                        data: [21, 3, 4, 3],
+                        backgroundColor: '#334155',
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    maintainAspectRatio: false,
+                    responsive: true,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        y: { beginAtZero: true, grid: { color: '#f1f5f9' } },
+                        x: { grid: { display: false } }
+                    }
+                }
+            });
+
+            const profitCtx = document.getElementById('profitChart').getContext('2d');
+            profitChart = new Chart(profitCtx, {
+                type: 'line',
+                data: {
+                    labels: ['Transfer 1', 'Transfer 2', 'Transfer 3', 'Transfer 4'],
+                    datasets: [{
+                        label: 'Value (k)',
+                        data: [22, 30, 30, 19],
+                        borderColor: '#f59e0b',
+                        backgroundColor: 'rgba(245, 158, 11, 0.05)',
+                        fill: true,
+                        tension: 0.4
+                    }]
+                },
+                options: {
+                    maintainAspectRatio: false,
+                    responsive: true,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        y: { display: false },
+                        x: { grid: { display: false } }
+                    }
+                }
+            });
+        }
+
+        window.onload = () => {
+            showSection('intro');
+        };
+    </script>
+</body>
+</html>
