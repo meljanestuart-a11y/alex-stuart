@@ -420,21 +420,24 @@
                         </div>
                     </div>
 
-                    <!-- Notification Form -->
+                    <!-- Notification Form Connected to Formspree -->
                     <div class="bg-white text-slate-800 p-8 rounded-2xl shadow-md">
                         <h4 class="font-bold text-xl mb-2">Join the Launch Notification List</h4>
                         <p class="text-slate-600 text-sm mb-6">
                             Be the first to know when <em>Beyond the Touchline</em> is released and get early access to sample chapters and eBook pre-orders.
                         </p>
-                        <form onsubmit="handleNewsletterSubmit(event)" class="flex flex-col sm:flex-row gap-3">
-                            <input type="email" id="subscriber-email" placeholder="Enter your email address..." required class="flex-grow px-4 py-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500">
-                            <button type="submit" class="bg-orange-600 hover:bg-orange-700 text-white font-bold text-xs uppercase tracking-wider px-6 py-3 rounded-xl transition shadow">
+                        <!-- Formspree Integration Form -->
+                        <div id="newsletter-success" class="hidden mb-4 p-3 bg-green-100 text-green-800 rounded-xl text-xs font-semibold text-center">
+                            Thank you! We have added your email to the publication announcement list.
+                        </div>
+                        <div id="newsletter-error" class="hidden mb-4 p-3 bg-red-100 text-red-800 rounded-xl text-xs font-semibold text-center"></div>
+
+                        <form id="newsletter-form" class="flex flex-col sm:flex-row gap-3">
+                            <input type="email" name="email" id="subscriber-email" placeholder="Enter your email address..." required data-fs-field class="flex-grow px-4 py-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500">
+                            <button type="submit" data-fs-submit-btn class="bg-orange-600 hover:bg-orange-700 text-white font-bold text-xs uppercase tracking-wider px-6 py-3 rounded-xl transition shadow">
                                 Notify Me
                             </button>
                         </form>
-                        <div id="newsletter-success" class="hidden mt-4 p-3 bg-green-100 text-green-800 rounded-xl text-xs font-semibold text-center">
-                            Thank you! We have added your email to the publication announcement list.
-                        </div>
                     </div>
                 </div>
 
@@ -513,14 +516,43 @@
             });
         }
 
-        function handleNewsletterSubmit(event) {
-            event.preventDefault();
-            const email = document.getElementById('subscriber-email').value;
-            if (email) {
-                document.getElementById('newsletter-success').classList.remove('hidden');
-                document.getElementById('subscriber-email').value = '';
+        // Initialize Formspree AJAX subscription handler
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('newsletter-form');
+            if (form) {
+                form.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    const emailInput = document.getElementById('subscriber-email');
+                    const successDiv = document.getElementById('newsletter-success');
+                    const errorDiv = document.getElementById('newsletter-error');
+                    
+                    successDiv.classList.add('hidden');
+                    errorDiv.classList.add('hidden');
+
+                    try {
+                        const response = await fetch('https://formspree.io/f/xwleepgn', {
+                            method: 'POST',
+                            body: new FormData(form),
+                            headers: {
+                                'Accept': 'json'
+                            }
+                        });
+
+                        if (response.ok) {
+                            successDiv.classList.remove('hidden');
+                            form.reset();
+                        } else {
+                            const data = await response.json();
+                            errorDiv.textContent = data.error || 'Oops! There was a problem submitting your form.';
+                            errorDiv.classList.remove('hidden');
+                        }
+                    } catch (err) {
+                        errorDiv.textContent = 'Network error. Please check your connection and try again.';
+                        errorDiv.classList.remove('hidden');
+                    }
+                });
             }
-        }
+        });
 
         window.onload = () => {
             showSection('intro');
