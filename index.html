@@ -6,7 +6,7 @@
     <title>Alex Stuart | A Life of Sport & Service</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <!-- Chosen Palette: Scottish Heritage (Slate Blue, Warm Cream, Charcoal, and subtle Tangerine) -->
+    <!-- Palette: Scottish Heritage (Slate Blue, Warm Cream, Charcoal, Tangerine Accent) -->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap');
 
@@ -14,7 +14,7 @@
             --slate-blue: #334155;
             --warm-cream: #f8fafc;
             --charcoal: #1e293b;
-            --tangerine: #f59e0b;
+            --tangerine: #ea580c;
             --stone-gray: #64748b;
         }
 
@@ -35,8 +35,7 @@
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
-            height: 350px;
-            max-height: 400px;
+            height: 250px;
         }
 
         .nav-link {
@@ -60,31 +59,29 @@
         }
 
         .fade-in {
-            animation: fadeIn 0.8s ease-out forwards;
+            animation: fadeIn 0.6s ease-out forwards;
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
+            from { opacity: 0; transform: translateY(8px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        .photo-placeholder {
-            background-color: #e2e8f0;
-            border: 2px dashed #cbd5e1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #94a3b8;
-            border-radius: 1rem;
+        .photo-card {
+            background-color: #f1f5f9;
+            border: 1px solid #e2e8f0;
+            border-radius: 1.25rem;
             overflow: hidden;
-            text-align: center;
-            padding: 1rem;
+            position: relative;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
         }
 
-        .photo-placeholder img {
+        .photo-card img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: center;
+            display: block;
         }
     </style>
 </head>
@@ -93,7 +90,7 @@
     <nav class="sticky top-0 z-50 bg-white/90 border-b border-slate-200 backdrop-blur-md">
         <div class="max-w-6xl mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center">
             <div class="flex items-center gap-3 mb-4 md:mb-0">
-                <div class="bg-slate-800 text-white p-2 rounded font-bold text-xl">AS</div>
+                <div class="bg-slate-800 text-white p-2 rounded-xl font-bold text-xl">AS</div>
                 <div class="leading-tight">
                     <span class="block font-bold text-slate-800 tracking-tight uppercase">Alex Stuart</span>
                     <span class="text-[10px] uppercase tracking-widest text-orange-600 font-semibold italic">A Life of Service (b. 1940)</span>
@@ -112,43 +109,43 @@
         
         <!-- SECTION: INTRO -->
         <section id="intro" class="section-block fade-in">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-20">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-16">
                 <div class="lg:col-span-7">
                     <span class="text-orange-600 font-bold tracking-tighter text-sm uppercase">Biographical Overview (b. 1940)</span>
-                    <h1 class="serif-heading text-5xl md:text-7xl mt-4 mb-8 leading-tight">Sporting excellence meets civic duty.</h1>
+                    <h1 class="serif-heading text-4xl md:text-6xl mt-4 mb-6 leading-tight">Sporting excellence meets civic duty.</h1>
                     <p class="text-lg text-slate-600 leading-relaxed mb-6">
                         Alexander Stuart (b. 1940) is a pivotal figure in Scottish sport. Beginning as a young laboratory technician in Aberdeen studying for his Highers, he built his career through patience and discipline. As a player for Dundee F.C. during their most successful era, as Scotland's youngest manager at Montrose, and later as Dundee's Director of Leisure, he oversaw a transformation in how the public engaged with sport and recreation.
                     </p>
-                    <div class="flex flex-wrap gap-4 mb-8">
+                    <div class="flex flex-wrap gap-3 mb-8">
                         <div class="px-4 py-2 bg-slate-100 rounded-full text-xs font-bold text-slate-600 border border-slate-200">League Champion 1961-62</div>
                         <div class="px-4 py-2 bg-slate-100 rounded-full text-xs font-bold text-slate-600 border border-slate-200">Managerial Pioneer</div>
                         <div class="px-4 py-2 bg-slate-100 rounded-full text-xs font-bold text-slate-600 border border-slate-200">Civic Leader & Retired (2001)</div>
                     </div>
                     <div>
                         <button onclick="showSection('book')" class="inline-flex items-center gap-2 bg-orange-600 hover:bg-orange-700 text-white font-bold text-xs uppercase tracking-wider px-6 py-3 rounded-full transition shadow-md">
-                            <span>Explore the Upcoming Book</span>
+                            <span>Explore the Memoir</span>
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                         </button>
                     </div>
                 </div>
                 <div class="lg:col-span-5">
-                    <div class="photo-placeholder aspect-[4/5] shadow-2xl relative">
+                    <div class="photo-card aspect-[4/5] shadow-2xl">
                         <img src="DFC.jpg" alt="Alex Stuart Portrait" onerror="this.src='https://placehold.co/400x500/e2e8f0/64748b?text=Alex+Stuart+Archive'">
-                        <div class="absolute bottom-4 right-4 bg-white/80 px-3 py-1 text-[10px] rounded uppercase font-bold text-slate-500">© Stuart Family Archive</div>
+                        <div class="absolute bottom-3 right-3 bg-white/90 px-3 py-1 text-[10px] rounded uppercase font-bold text-slate-600 backdrop-blur-sm">© Stuart Family Archive</div>
                     </div>
                 </div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 items-center">
-                <div class="p-8 bg-slate-800 rounded-3xl text-white">
+                <div class="p-8 bg-slate-800 rounded-3xl text-white shadow-md">
                     <h3 class="text-orange-400 font-bold uppercase text-xs tracking-widest mb-4">The Integrity Choice</h3>
                     <p class="italic text-lg leading-relaxed">
                         "In 1977, Alex was the first choice for the Aberdeen managerial post. He declined because he had given his word to stay at Ayr United. This decision changed the course of Scottish football history."
                     </p>
                 </div>
-                <div class="photo-placeholder h-64 relative overflow-hidden rounded-2xl">
-                    <img src="1977 Football PErsonality of the month.jpg" alt="1977 Football Personality of the month" onerror="this.src='https://placehold.co/500x300/e2e8f0/64748b?text=1977+Football+Personality+of+the+Month'">
-                    <div class="absolute bottom-3 right-3 bg-white/90 px-2 py-0.5 text-[9px] rounded uppercase font-bold text-slate-500">1977 Personality of the Month</div>
+                <div class="photo-card aspect-[16/10]">
+                    <img src="1977 Football PErsonality of the month.jpg" alt="1977 Football Personality of the month" onerror="this.src='https://placehold.co/600x375/e2e8f0/64748b?text=1977+Football+Personality+of+the+Month'">
+                    <div class="absolute bottom-3 right-3 bg-white/90 px-2.5 py-1 text-[10px] rounded uppercase font-bold text-slate-600 backdrop-blur-sm">1977 Personality of the Month</div>
                 </div>
             </div>
         </section>
@@ -157,54 +154,47 @@
         <section id="football" class="section-block hidden fade-in">
             <div class="mb-12">
                 <span class="text-orange-600 font-bold tracking-tighter text-sm uppercase">Dundee F.C. Era (1958–1969)</span>
-                <h2 class="serif-heading text-5xl mb-6">From Aberdeen East End to Dens Park</h2>
+                <h2 class="serif-heading text-4xl md:text-5xl mb-6">From Aberdeen East End to Dens Park</h2>
                 <p class="text-slate-600 text-lg max-w-4xl leading-relaxed">
                     In 1958 Alec Stuart was a young Aberdeen footballer whose life was not yet centred entirely on the game. Working as a laboratory technician with a chemical research firm while playing junior football for Aberdeen East End, he attracted interest from Cardiff City, Swansea, Norwich City, and Wolves. Legend has it he had a railway ticket for Preston in his pocket when Dundee moved to sign him on 29 November 1958.
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-20">
-                <div class="lg:col-span-7 space-y-12">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-16">
+                <div class="lg:col-span-7 space-y-10">
                     <div>
                         <h3 class="text-2xl font-bold text-slate-800 mb-3 border-b-2 border-orange-200 pb-2 inline-block">An Unusual Signing</h3>
-                        <p class="text-slate-600 leading-relaxed mb-4">
+                        <p class="text-slate-600 leading-relaxed">
                             Manager Willie Thornton was reportedly ill in bed with the flu, so trainer Sammy Kean was sent north carrying the necessary forms. Kean secured Alec’s signature, marking the only player Kean ever signed. The quiet young left-back would eventually become a central figure in one of Dundee’s greatest eras.
                         </p>
                     </div>
                     <div>
                         <h3 class="text-2xl font-bold text-slate-800 mb-3 border-b-2 border-orange-200 pb-2 inline-block">Waiting and the Milan Breakthrough (1963)</h3>
-                        <p class="text-slate-600 leading-relaxed mb-4">
+                        <p class="text-slate-600 leading-relaxed">
                             Alec spent several years in the reserves, learning his trade and transitioning from left-back to left-half under Bob Shankly. When captain Bobby Cox was injured before Dundee’s European Cup semi-final against AC Milan, 22-year-old Alec stepped in for both legs at the San Siro and Dens Park, proving he belonged on Europe's largest stages.
                         </p>
                     </div>
                     <div>
                         <h3 class="text-2xl font-bold text-slate-800 mb-3 border-b-2 border-orange-200 pb-2 inline-block">Captaincy and European Nights</h3>
-                        <p class="text-slate-600 leading-relaxed mb-4">
+                        <p class="text-slate-600 leading-relaxed">
                             By 1967, Alec captained Dundee in the League Cup Final against Celtic. Days later, he scored twice from long range in a 3–1 victory over Royal Liège, earning headlines as the man who shattered the Belgians. He left in April 1969 after 236 competitive appearances and 31 goals, as the last member of the 1961–62 championship squad to depart Dens.
                         </p>
                     </div>
                 </div>
 
-                <div class="lg:col-span-5 space-y-8">
-                    <div class="p-8 bg-white border border-slate-200 rounded-3xl shadow-sm">
-                        <h3 class="font-bold text-lg text-slate-800 mb-2">The Highest-Scoring Defender</h3>
-                        <p class="text-sm text-slate-600 mb-6">
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="p-6 bg-white border border-slate-200 rounded-3xl shadow-sm">
+                        <h3 class="font-bold text-lg text-slate-800 mb-1">The Highest-Scoring Defender</h3>
+                        <p class="text-xs text-slate-600 mb-4">
                             Alec achieved 31 competitive goals for Dundee. Dens Park supporters would chant <strong class="text-slate-800">"Stuart!"</strong> whenever Dundee had a set piece near goal.
                         </p>
-                        <div class="chart-container !h-[220px]">
+                        <div class="chart-container">
                             <canvas id="careerChart"></canvas>
                         </div>
                     </div>
-                    <div class="photo-placeholder h-64 relative overflow-hidden rounded-3xl shadow-lg">
-                        <img src="Dundee team.jpg" alt="1960s Dundee F.C. Team Squad" onerror="this.src='https://placehold.co/500x300/e2e8f0/64748b?text=Dundee+FC+Team+Squad'">
-                        <div class="absolute bottom-3 right-3 bg-white/90 px-2 py-0.5 text-[9px] rounded uppercase font-bold text-slate-500">Dundee F.C. Squad</div>
-                    </div>
-                    <div class="p-8 bg-slate-800 rounded-3xl text-white shadow-lg relative overflow-hidden">
-                        <h3 class="text-orange-400 font-bold uppercase text-xs tracking-widest mb-2 relative z-10">Beyond the Pitch</h3>
-                        <h4 class="text-xl font-serif font-bold mb-3 relative z-10">Hammy and the Hamsters</h4>
-                        <p class="text-sm text-slate-300 leading-relaxed relative z-10">
-                            In March 1964, he joined teammates Alex Hamilton, Craig Brown, Kenny Cameron, and Hugh Robertson to form a singing group, capturing the camaraderie of the 1960s squad.
-                        </p>
+                    <div class="photo-card aspect-[16/10]">
+                        <img src="Dundee team.jpg" alt="1960s Dundee F.C. Team Squad" onerror="this.src='https://placehold.co/600x375/e2e8f0/64748b?text=Dundee+FC+Team+Squad'">
+                        <div class="absolute bottom-2.5 right-2.5 bg-white/90 px-2.5 py-1 text-[10px] rounded uppercase font-bold text-slate-600 backdrop-blur-sm">Dundee F.C. Squad</div>
                     </div>
                 </div>
             </div>
@@ -213,36 +203,36 @@
 
             <div class="mb-12">
                 <span class="text-orange-600 font-bold tracking-tighter text-sm uppercase">Montrose Era (1969–1975)</span>
-                <h2 class="serif-heading text-5xl mb-6 mt-2">The Youngest Boss in Scotland</h2>
+                <h2 class="serif-heading text-4xl md:text-5xl mb-6 mt-2">The Youngest Boss in Scotland</h2>
                 <p class="text-slate-600 text-lg max-w-4xl leading-relaxed">
                     Alec arrived at Links Park in November 1969 as a 29-year-old player-manager. Over six years, while teaching primary school in Dundee during weekdays, he built Montrose into a respected force known for organisation, player development, and memorable cup runs.
                 </p>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-16">
-                <div class="lg:col-span-7 space-y-12">
+                <div class="lg:col-span-7 space-y-10">
                     <div>
                         <h3 class="text-2xl font-bold text-slate-800 mb-3 border-b-2 border-orange-200 pb-2 inline-block">Three Roles at Once</h3>
-                        <p class="text-slate-600 leading-relaxed mb-4">
+                        <p class="text-slate-600 leading-relaxed">
                             Alec balanced teaching in Dundee with training a part-time squad at Links Park. His partnership with former Dundee teammate Kenny Cameron formed a stable backroom team. "The Montrose method" combined discipline and positional sense, helping part-time players compete against full-time opponents.
                         </p>
                     </div>
                     <div>
                         <h3 class="text-2xl font-bold text-slate-800 mb-3 border-b-2 border-orange-200 pb-2 inline-block">Hampden Semi-Final (1975)</h3>
-                        <p class="text-slate-600 leading-relaxed mb-4">
+                        <p class="text-slate-600 leading-relaxed">
                             Following impressive cup scalps—including taking Hearts to a Tynecastle replay in 1970 and defeating Hibernian in 1975—Montrose reached the League Cup semi-final against Rangers at Hampden on 8 October 1975, leading 1–0 at half-time before eventually falling 5–1. Willie Ormond also appointed him assistant manager for a Second Division representative side.
                         </p>
                     </div>
                 </div>
 
                 <div class="lg:col-span-5 space-y-6">
-                    <div class="photo-placeholder h-56 rounded-2xl relative overflow-hidden shadow-md">
-                        <img src="Montrose_Clipping_1.jpg" alt="Montrose Team Squad" onerror="this.src='https://placehold.co/400x200/e2e8f0/64748b?text=Montrose+Squad+Photo'">
-                        <div class="absolute bottom-2 right-2 bg-white/90 px-2 py-0.5 text-[9px] rounded uppercase font-bold text-slate-500">Montrose F.C. Squad Archive</div>
+                    <div class="photo-card aspect-[16/10]">
+                        <img src="Montrose_Clipping_1.jpg" alt="Montrose Team Squad" onerror="this.src='https://placehold.co/600x375/e2e8f0/64748b?text=Montrose+Squad+Photo'">
+                        <div class="absolute bottom-2.5 right-2.5 bg-white/90 px-2 py-0.5 text-[9px] rounded uppercase font-bold text-slate-600 backdrop-blur-sm">Montrose F.C. Squad Archive</div>
                     </div>
-                    <div class="photo-placeholder h-56 rounded-2xl relative overflow-hidden shadow-md">
-                        <img src="Montrose_clipping_2.jpg" alt="Distinction Well Earned clipping" onerror="this.src='https://placehold.co/400x200/e2e8f0/64748b?text=Distinction+Well+Earned+Clipping'">
-                        <div class="absolute bottom-2 right-2 bg-white/90 px-2 py-0.5 text-[9px] rounded uppercase font-bold text-slate-500">Newspaper Feature</div>
+                    <div class="photo-card aspect-[3/4] max-w-xs mx-auto">
+                        <img src="Montrose_clipping_2.jpg" alt="Distinction Well Earned clipping" onerror="this.src='https://placehold.co/400x533/e2e8f0/64748b?text=Distinction+Well+Earned+Clipping'">
+                        <div class="absolute bottom-2.5 right-2.5 bg-white/90 px-2 py-0.5 text-[9px] rounded uppercase font-bold text-slate-600 backdrop-blur-sm">Newspaper Feature</div>
                     </div>
                 </div>
             </div>
@@ -251,32 +241,32 @@
 
             <div class="mb-12">
                 <span class="text-orange-600 font-bold tracking-tighter text-sm uppercase">Ayr United & St Johnstone (1975–1980)</span>
-                <h2 class="serif-heading text-5xl mb-6 mt-2">The Final Years in the Dugout</h2>
+                <h2 class="serif-heading text-4xl md:text-5xl mb-6 mt-2">The Final Years in the Dugout</h2>
                 <p class="text-slate-600 text-lg max-w-4xl leading-relaxed">
                     Succeeding Ally MacLeod at Ayr United in November 1975, Alec immediately won his first match against Aberdeen, prompting the famous headline: <em class="text-slate-800 font-semibold">"Alex tries on Ally's shoes—and they fit!"</em> He guided part-time Ayr to a 6th-place finish in the top-flight Premier Division.
                 </p>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-16">
-                <div class="lg:col-span-7 space-y-12">
+                <div class="lg:col-span-7 space-y-10">
                     <div>
                         <h3 class="text-2xl font-bold text-slate-800 mb-3 border-b-2 border-orange-200 pb-2 inline-block">Bayern Munich & Global Tours</h3>
-                        <p class="text-slate-600 leading-relaxed mb-4">
+                        <p class="text-slate-600 leading-relaxed">
                             In May 1976, Bayern Munich used Somerset Park to train before the European Cup Final, leading to a memorable photograph with Uli Hoeneß. That same summer, Ayr toured Nigeria, defeating Enugu Rangers 3–0, and later defeated Newcastle United in the Anglo-Scottish Cup.
                         </p>
                     </div>
                     <div>
                         <h3 class="text-2xl font-bold text-slate-800 mb-3 border-b-2 border-orange-200 pb-2 inline-block">Launching Ally McCoist at St Johnstone</h3>
-                        <p class="text-slate-600 leading-relaxed mb-4">
+                        <p class="text-slate-600 leading-relaxed">
                             Moving to St Johnstone in October 1978, Alec's tenure is immortalized by his trust in youth. During a difficult rebuilding spell, he handed a 16-year-old schoolboy striker his senior debut on 7 April 1979 against Raith Rovers—launching the legendary career of <strong>Ally McCoist</strong>.
                         </p>
                     </div>
                 </div>
 
-                <div class="lg:col-span-5 space-y-6">
-                    <div class="photo-placeholder h-64 rounded-3xl relative overflow-hidden shadow-lg">
-                        <img src="Ayr_Bayern_Clipping.jpg" alt="Alex Stuart with Bayern Munich star Uli Hoeneß" onerror="this.src='https://placehold.co/400x200/e2e8f0/64748b?text=Ayr+United+and+Bayern+Munich'">
-                        <div class="absolute bottom-2 right-2 bg-white/90 px-2 py-0.5 text-[9px] rounded uppercase font-bold text-slate-500">Somerset Park Training Session</div>
+                <div class="lg:col-span-5">
+                    <div class="photo-card aspect-[4/3]">
+                        <img src="Ayr_Bayern_Clipping.jpg" alt="Alex Stuart with Bayern Munich star Uli Hoeneß" onerror="this.src='https://placehold.co/600x450/e2e8f0/64748b?text=Ayr+United+and+Bayern+Munich'">
+                        <div class="absolute bottom-2.5 right-2.5 bg-white/90 px-2 py-0.5 text-[9px] rounded uppercase font-bold text-slate-600 backdrop-blur-sm">Somerset Park Training Session</div>
                     </div>
                 </div>
             </div>
@@ -286,38 +276,38 @@
         <section id="leisure" class="section-block hidden fade-in">
             <div class="mb-12">
                 <span class="text-orange-600 font-bold tracking-tighter text-sm uppercase">c. 1980–2001 & Beyond</span>
-                <h2 class="serif-heading text-5xl mb-6 mt-2">A Life Beyond the Touchline & Retirement</h2>
+                <h2 class="serif-heading text-4xl md:text-5xl mb-6 mt-2">A Life Beyond the Touchline & Retirement</h2>
                 <p class="text-slate-600 text-lg max-w-4xl leading-relaxed">
-                    When Alec’s period as a senior football manager concluded in 1980, he transitioned into public service as Dundee District Council’s leisure and recreation manager, eventually serving as <strong>Director of Leisure and Parks</strong> for Dundee City Council until his official retirement on 20 August 2001. Even in retirement, he has remained passionately keen on football and active in advocating for sporting change.
+                    When Alec’s period as a senior football manager concluded in 1980, he transitioned into public service as Dundee District Council’s leisure and recreation manager, eventually serving as <strong>Director of Leisure and Parks</strong> for Dundee City Council until his official retirement on 20 August 2001.
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
-                <div class="bg-slate-900 text-white rounded-3xl p-10 shadow-lg flex flex-col justify-center">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+                <div class="bg-slate-900 text-white rounded-3xl p-8 md:p-10 shadow-lg flex flex-col justify-center">
                     <h3 class="text-orange-400 font-bold uppercase text-xs tracking-widest mb-4">Global Connections & Major Facilities</h3>
-                    <h4 class="text-3xl font-serif font-bold mb-6">Bobby Charlton Soccer Schools & City Infrastructure</h4>
-                    <p class="text-slate-300 leading-relaxed mb-6">
+                    <h4 class="text-2xl font-serif font-bold mb-4">Bobby Charlton Soccer Schools & City Infrastructure</h4>
+                    <p class="text-slate-300 leading-relaxed mb-4 text-sm">
                         In October 1981, Alec persuaded Sir Bobby Charlton to establish his Scottish soccer school in Dundee rather than Edinburgh, creating a recurring sporting fixture that lasted into the 1990s.
                     </p>
-                    <p class="text-slate-300 leading-relaxed">
+                    <p class="text-slate-300 leading-relaxed text-sm">
                         He was also instrumental in coordinating major civic projects, including the Dick McTaggart, Lynch, and Douglas sports centres, the refurbishment of the original Olympia swimming complex, the Dundee Ice Arena, and the city marathon.
                     </p>
                 </div>
 
-                <div class="space-y-8">
-                    <div class="bg-white border border-slate-200 rounded-3xl p-8 shadow-sm">
-                        <h4 class="text-xl font-bold text-slate-800 mb-3">Post-2001: Still Keen & Striving for Change</h4>
+                <div class="space-y-6">
+                    <div class="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm">
+                        <h4 class="text-lg font-bold text-slate-800 mb-2">Post-2001: Still Keen & Striving for Change</h4>
                         <p class="text-slate-600 text-sm leading-relaxed mb-4">
-                            Retirement in 2001 did not slow his commitment to sport. Drawing on decades of administrative experience, Alec remained deeply engaged in football development, working behind the scenes on visionary proposals such as the joint initiative between <strong>Dundee F.C., Dundee United, and the University of Abertay</strong> to establish a shared £5m youth academy and community sports facility.
+                            Retirement in 2001 did not slow his commitment to sport. Drawing on decades of administrative experience, Alec remained deeply engaged behind the scenes on visionary proposals such as the joint initiative between <strong>Dundee F.C., Dundee United, and the University of Abertay</strong> to establish a shared £5m youth academy and community sports facility.
                         </p>
                         <a href="https://www.dundeeunitedfc.co.uk/news/1180/DUNDEE-CLUBS-JOIN-FORCES-IN-5M-YOUTH-ACADEMY-BID-.html?utm_source=chatgpt.com" target="_blank" class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-orange-600 hover:text-orange-700">
-                            <span>Read about the Dundee Clubs Youth Academy Bid</span>
+                            <span>Read about the Youth Academy Bid</span>
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                         </a>
                     </div>
 
-                    <div class="bg-white border border-slate-200 rounded-3xl p-8 shadow-sm">
-                        <h4 class="text-xl font-bold text-slate-800 mb-3">Inclusion and International Twinning</h4>
+                    <div class="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm">
+                        <h4 class="text-lg font-bold text-slate-800 mb-2">Inclusion and International Twinning</h4>
                         <p class="text-slate-600 text-sm leading-relaxed">
                             Alec pioneered sports opportunities for disabled athletes (such as the Fairmuir Sports Club) and strengthened international friendships through active sports exchanges with Dundee's twin city, Würzburg, Germany.
                         </p>
@@ -329,23 +319,23 @@
         <!-- SECTION: BOOK IN PROGRESS & EBOOK -->
         <section id="book" class="section-block hidden fade-in">
             <div class="max-w-4xl mx-auto">
-                <div class="text-center mb-16">
+                <div class="text-center mb-12">
                     <span class="bg-orange-100 text-orange-700 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest">Working Master Manuscript (2026)</span>
-                    <h2 class="serif-heading text-4xl md:text-6xl mt-4 mb-4">Beyond the Touchline</h2>
+                    <h2 class="serif-heading text-4xl md:text-5xl mt-4 mb-3">Beyond the Touchline</h2>
                     <p class="text-slate-600 text-lg">The upcoming biographical memoir by Melanie Stuart</p>
                 </div>
 
                 <!-- Book Spotlight Card -->
-                <div class="bg-white border border-slate-200 rounded-3xl p-8 md:p-12 shadow-xl grid grid-cols-1 md:grid-cols-12 gap-8 items-center mb-16">
+                <div class="bg-white border border-slate-200 rounded-3xl p-6 md:p-10 shadow-xl grid grid-cols-1 md:grid-cols-12 gap-8 items-center mb-12">
                     <div class="md:col-span-5">
-                        <div class="photo-placeholder aspect-[3/4] shadow-md rounded-2xl bg-slate-800 text-white flex flex-col justify-center p-6 text-center">
+                        <div class="photo-card aspect-[3/4] bg-slate-800 text-white flex flex-col justify-center p-6 text-center">
                             <span class="text-xs uppercase tracking-widest text-orange-400 mb-2">Book Cover Preview</span>
                             <h3 class="serif-heading text-2xl font-bold mb-1">Beyond the Touchline</h3>
                             <p class="text-xs text-slate-300 italic mb-4">The Life and Legacy of Alex Stuart</p>
                             <span class="text-[10px] bg-white/20 py-1 px-3 rounded-full uppercase tracking-wider mx-auto">Coming Soon</span>
                         </div>
                     </div>
-                    <div class="md:col-span-7 space-y-6">
+                    <div class="md:col-span-7 space-y-4">
                         <h3 class="text-2xl font-bold text-slate-800">About the Book</h3>
                         <p class="text-slate-600 leading-relaxed text-sm">
                             Striking the rare chord between an intimate daughter's tribute and rigorous sports history, <em>Beyond the Touchline</em> chronicles Alex Stuart's journey from Aberdeen laboratories and Dens Park European nights to managing Montrose, Ayr United, St Johnstone, and shaping Dundee's civic leisure landscape.
@@ -353,16 +343,16 @@
                         <div class="border-l-4 border-orange-500 pl-4 italic text-slate-700 text-sm">
                             "An honest, resonant emotional core exploring a life dedicated to football, family, and public service."
                         </div>
-                        <div class="flex flex-wrap gap-3 pt-2">
+                        <div class="flex flex-wrap gap-2 pt-2">
                             <span class="px-3 py-1 bg-slate-100 text-slate-700 text-xs font-semibold rounded-lg">Hardcover Edition</span>
                             <span class="px-3 py-1 bg-slate-100 text-slate-700 text-xs font-semibold rounded-lg">Digital eBook (.epub / .pdf)</span>
-                            <span class="px-3 py-1 bg-slate-100 text-slate-700 text-xs font-semibold rounded-lg">Exclusive Family Archives</span>
+                            <span class="px-3 py-1 bg-slate-100 text-slate-700 text-xs font-semibold rounded-lg">Family Archives</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Notification Form Connected to Formspree -->
-                <div class="bg-slate-900 text-white rounded-3xl p-8 md:p-12 mb-16 shadow-lg">
+                <div class="bg-slate-900 text-white rounded-3xl p-8 md:p-12 mb-12 shadow-lg">
                     <div class="max-w-2xl mx-auto bg-white text-slate-800 p-8 rounded-2xl shadow-md">
                         <h4 class="font-bold text-xl mb-2">Join the Launch Notification List</h4>
                         <p class="text-slate-600 text-sm mb-6">
@@ -388,22 +378,22 @@
 
     </main>
 
-    <footer class="bg-white border-t border-slate-200 py-16 mt-20">
+    <footer class="bg-white border-t border-slate-200 py-12 mt-16">
         <div class="max-w-6xl mx-auto px-6 text-center">
             <h2 class="serif-heading text-3xl mb-2">Alex Stuart</h2>
-            <p class="text-xs tracking-widest uppercase text-slate-400 mb-12">Born 1940 • Civic Service 1980–2001 (Retired) • Memoir in Progress (2026)</p>
+            <p class="text-xs tracking-widest uppercase text-slate-400 mb-10">Born 1940 • Civic Service 1980–2001 (Retired) • Memoir in Progress (2026)</p>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-left text-slate-500 text-xs leading-relaxed mb-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left text-slate-500 text-xs leading-relaxed mb-10">
                 <div>
-                    <h4 class="font-bold text-slate-800 uppercase mb-4 tracking-wider">Copyright Notice</h4>
+                    <h4 class="font-bold text-slate-800 uppercase mb-3 tracking-wider">Copyright Notice</h4>
                     <p>© 2026 Stuart Family Archive. All rights reserved. No part of this interactive biography or upcoming manuscript may be reproduced without prior written permission.</p>
                 </div>
                 <div>
-                    <h4 class="font-bold text-slate-800 uppercase mb-4 tracking-wider">Image Attributions</h4>
+                    <h4 class="font-bold text-slate-800 uppercase mb-3 tracking-wider">Image Attributions</h4>
                     <p>All family photographs and press clippings provided by the Stuart Family Archive and used with permission.</p>
                 </div>
                 <div>
-                    <h4 class="font-bold text-slate-800 uppercase mb-4 tracking-wider">Historical Accuracy</h4>
+                    <h4 class="font-bold text-slate-800 uppercase mb-3 tracking-wider">Historical Accuracy</h4>
                     <p>Statistics and biographical data are cross-referenced with Dundee F.C., Montrose F.C., and Dundee City Council archives. Produced as a commemorative digital archive.</p>
                 </div>
             </div>
