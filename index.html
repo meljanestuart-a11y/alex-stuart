@@ -90,7 +90,6 @@
 </head>
 <body class="selection:bg-orange-100">
 
-    <!-- Navigation -->
     <nav class="sticky top-0 z-50 bg-white/90 border-b border-slate-200 backdrop-blur-md">
         <div class="max-w-6xl mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center">
             <div class="flex items-center gap-3 mb-4 md:mb-0">
@@ -100,10 +99,11 @@
                     <span class="text-[10px] uppercase tracking-widest text-orange-600 font-semibold italic">A Life of Service</span>
                 </div>
             </div>
-            <div class="flex gap-8 text-xs font-bold uppercase tracking-widest text-slate-500">
-                <button onclick="showSection('intro')" id="btn-intro" class="nav-link active">The Life</button>
-                <button onclick="showSection('football')" id="btn-football" class="nav-link">The Pitch</button>
-                <button onclick="showSection('leisure')" id="btn-leisure" class="nav-link">The City</button>
+            <div class="flex gap-6 md:gap-8 text-xs font-bold uppercase tracking-widest text-slate-500 overflow-x-auto pb-2 md:pb-0">
+                <button onclick="showSection('intro')" id="btn-intro" class="nav-link active whitespace-nowrap">The Life</button>
+                <button onclick="showSection('football')" id="btn-football" class="nav-link whitespace-nowrap">The Pitch</button>
+                <button onclick="showSection('leisure')" id="btn-leisure" class="nav-link whitespace-nowrap">The City</button>
+                <button onclick="showSection('book')" id="btn-book" class="nav-link whitespace-nowrap text-orange-600">📖 Memoir & eBook</button>
             </div>
         </div>
     </nav>
@@ -124,10 +124,16 @@
                         <div class="px-4 py-2 bg-slate-100 rounded-full text-xs font-bold text-slate-600 border border-slate-200">Managerial Pioneer</div>
                         <div class="px-4 py-2 bg-slate-100 rounded-full text-xs font-bold text-slate-600 border border-slate-200">Civic Leader</div>
                     </div>
+                    <div>
+                        <button onclick="showSection('book')" class="inline-flex items-center gap-2 bg-orange-600 hover:bg-orange-700 text-white font-bold text-xs uppercase tracking-wider px-6 py-3 rounded-full transition shadow-md">
+                            <span>Explore the Upcoming Book</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </button>
+                    </div>
                 </div>
                 <div class="lg:col-span-5">
                     <div class="photo-placeholder aspect-[4/5] shadow-2xl relative">
-                        <img src="DFC.jpg" alt="Alex Stuart Portrait">
+                        <img src="DFC.jpg" alt="Alex Stuart Portrait" onerror="this.src='https://placehold.co/400x500/e2e8f0/64748b?text=Alex+Stuart+Archive'">
                         <div class="absolute bottom-4 right-4 bg-white/80 px-3 py-1 text-[10px] rounded uppercase font-bold text-slate-500">© Stuart Family Archive</div>
                     </div>
                 </div>
@@ -140,16 +146,15 @@
                         "In 1977, Alex was the first choice for the Aberdeen managerial post. He declined because he had given his word to stay at Ayr United. This decision changed the course of Scottish football history."
                     </p>
                 </div>
-                <div class="photo-placeholder h-64">
-<img src="1977 Football PErsonality of the month.jpg" alt=" 1977 Football Personality of the month">
-                    </div>
+                <div class="photo-placeholder h-64 relative overflow-hidden rounded-2xl">
+                    <img src="1977_Football_Personality.jpg" alt="1977 Football Personality of the month" onerror="this.src='https://placehold.co/500x300/e2e8f0/64748b?text=1977+Football+Personality+of+the+Month'">
+                    <div class="absolute bottom-3 right-3 bg-white/90 px-2 py-0.5 text-[9px] rounded uppercase font-bold text-slate-500">Insert Image Here</div>
+                </div>
             </div>
         </section>
 
         <!-- SECTION: FOOTBALL -->
         <section id="football" class="section-block hidden fade-in">
-            
-            <!-- DUNDEE ERA -->
             <div class="mb-12">
                 <h2 class="serif-heading text-5xl mb-6">From Aberdeen East End to Dens Park</h2>
                 <p class="text-slate-600 text-lg max-w-4xl leading-relaxed">
@@ -201,7 +206,6 @@
 
             <hr class="border-slate-200 mb-16">
 
-            <!-- MONTROSE ERA -->
             <div class="mb-12">
                 <span class="text-orange-600 font-bold tracking-tighter text-sm uppercase">1969–1975</span>
                 <h2 class="serif-heading text-5xl mb-6 mt-2">The Youngest Boss in Scotland</h2>
@@ -233,11 +237,13 @@
                 </div>
 
                 <div class="lg:col-span-5 space-y-6">
-                    <div class="photo-placeholder h-48 rounded-2xl">
-                        <span class="text-sm px-4">Insert Clipping: "Crucial half hour for confident Montrose"</span>
+                    <div class="photo-placeholder h-48 rounded-2xl relative overflow-hidden">
+                        <img src="Montrose_Clipping_1.jpg" alt="Crucial half hour for confident Montrose clipping" onerror="this.src='https://placehold.co/400x200/e2e8f0/64748b?text=Crucial+half+hour+for+confident+Montrose'">
+                        <div class="absolute bottom-2 right-2 bg-white/90 px-2 py-0.5 text-[9px] rounded uppercase font-bold text-slate-500">Insert Clipping Here</div>
                     </div>
-                    <div class="photo-placeholder h-48 rounded-2xl">
-                        <span class="text-sm px-4">Insert Clipping: "Majestic Montrose - Boss Stuart tells how they're tops!"</span>
+                    <div class="photo-placeholder h-48 rounded-2xl relative overflow-hidden">
+                        <img src="Montrose_Clipping_2.jpg" alt="Majestic Montrose clipping" onerror="this.src='https://placehold.co/400x200/e2e8f0/64748b?text=Majestic+Montrose+-+Boss+Stuart'">
+                        <div class="absolute bottom-2 right-2 bg-white/90 px-2 py-0.5 text-[9px] rounded uppercase font-bold text-slate-500">Insert Clipping Here</div>
                     </div>
                     
                     <div class="p-6 bg-slate-100 border border-slate-200 rounded-2xl">
@@ -251,7 +257,6 @@
 
             <hr class="border-slate-200 mb-16">
 
-            <!-- AYR UNITED & ST JOHNSTONE ERA -->
             <div class="mb-12">
                 <span class="text-orange-600 font-bold tracking-tighter text-sm uppercase">1975–1980</span>
                 <h2 class="serif-heading text-5xl mb-6 mt-2">The Final Years in the Dugout</h2>
@@ -288,15 +293,15 @@
                         </p>
                     </div>
 
-                    <div class="photo-placeholder h-48 rounded-2xl">
-                        <span class="text-sm px-4">Insert Clipping: "Alex tries on Ally's shoes" / Bayern Munich Photo</span>
+                    <div class="photo-placeholder h-48 rounded-2xl relative overflow-hidden">
+                        <img src="Ayr_Bayern_Clipping.jpg" alt="Alex tries on Ally's shoes or Bayern Munich photo" onerror="this.src='https://placehold.co/400x200/e2e8f0/64748b?text=Alex+tries+on+Ally+shoes+/+Bayern+Munich'">
+                        <div class="absolute bottom-2 right-2 bg-white/90 px-2 py-0.5 text-[9px] rounded uppercase font-bold text-slate-500">Insert Image Here</div>
                     </div>
                 </div>
             </div>
-
         </section>
 
-        <!-- SECTION: LEISURE (The Council Years) -->
+        <!-- SECTION: LEISURE -->
         <section id="leisure" class="section-block hidden fade-in">
             <div class="mb-12">
                 <span class="text-orange-600 font-bold tracking-tighter text-sm uppercase">c. 1980–2001</span>
@@ -307,7 +312,6 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
-                <!-- Charlton Callout -->
                 <div class="bg-slate-900 text-white rounded-3xl p-10 shadow-lg flex flex-col justify-center">
                     <h3 class="text-orange-400 font-bold uppercase text-xs tracking-widest mb-4">Global Connections</h3>
                     <h4 class="text-3xl font-serif font-bold mb-6">Bobby Charlton Soccer Schools</h4>
@@ -319,7 +323,6 @@
                     </p>
                 </div>
 
-                <!-- Facilities & Marathon -->
                 <div class="space-y-8">
                     <div class="bg-white border border-slate-200 rounded-3xl p-8 shadow-sm">
                         <h4 class="text-xl font-bold text-slate-800 mb-3">Building Dundee's Infrastructure</h4>
@@ -355,7 +358,87 @@
                     </p>
                 </div>
             </div>
+        </section>
 
+        <!-- SECTION: BOOK IN PROGRESS & EBOOK -->
+        <section id="book" class="section-block hidden fade-in">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-16">
+                    <span class="bg-orange-100 text-orange-700 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest">Working Master Manuscript (2026)</span>
+                    <h2 class="serif-heading text-4xl md:text-6xl mt-4 mb-4">Beyond the Touchline</h2>
+                    <p class="text-slate-600 text-lg">The upcoming biographical memoir by Melanie Stuart</p>
+                </div>
+
+                <!-- Book Spotlight Card -->
+                <div class="bg-white border border-slate-200 rounded-3xl p-8 md:p-12 shadow-xl grid grid-cols-1 md:grid-cols-12 gap-8 items-center mb-16">
+                    <div class="md:col-span-5">
+                        <div class="photo-placeholder aspect-[3/4] shadow-md rounded-2xl bg-slate-800 text-white flex flex-col justify-center p-6 text-center">
+                            <span class="text-xs uppercase tracking-widest text-orange-400 mb-2">Book Cover Preview</span>
+                            <h3 class="serif-heading text-2xl font-bold mb-1">Beyond the Touchline</h3>
+                            <p class="text-xs text-slate-300 italic mb-4">The Life and Legacy of Alex Stuart</p>
+                            <span class="text-[10px] bg-white/20 py-1 px-3 rounded-full uppercase tracking-wider mx-auto">Coming Soon</span>
+                        </div>
+                    </div>
+                    <div class="md:col-span-7 space-y-6">
+                        <h3 class="text-2xl font-bold text-slate-800">About the Book</h3>
+                        <p class="text-slate-600 leading-relaxed text-sm">
+                            Striking the rare chord between an intimate daughter's tribute and rigorous sports history, <em>Beyond the Touchline</em> chronicles Alex Stuart's journey from Aberdeen laboratories and Dens Park European nights to managing Montrose, Ayr United, St Johnstone, and shaping Dundee's civic leisure landscape.
+                        </p>
+                        <div class="border-l-4 border-orange-500 pl-4 italic text-slate-700 text-sm">
+                            "An honest, resonant emotional core exploring a life dedicated to football, family, and public service."
+                        </div>
+                        <div class="flex flex-wrap gap-3 pt-2">
+                            <span class="px-3 py-1 bg-slate-100 text-slate-700 text-xs font-semibold rounded-lg">Hardcover Edition</span>
+                            <span class="px-3 py-1 bg-slate-100 text-slate-700 text-xs font-semibold rounded-lg">Digital eBook (.epub / .pdf)</span>
+                            <span class="px-3 py-1 bg-slate-100 text-slate-700 text-xs font-semibold rounded-lg">Exclusive Family Archives</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- eBook Publishing & Sales FAQ / Options -->
+                <div class="bg-slate-900 text-white rounded-3xl p-8 md:p-12 mb-16 shadow-lg">
+                    <h3 class="text-2xl font-serif font-bold mb-6 text-orange-400">Can you publish and sell an eBook directly on this website?</h3>
+                    <p class="text-slate-300 leading-relaxed mb-6 text-sm">
+                        <strong>Yes, absolutely!</strong> You have two fantastic ways to sell your digital eBook directly to readers right here:
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        <div class="bg-slate-800 p-6 rounded-2xl border border-slate-700">
+                            <h4 class="font-bold text-white mb-2 text-base flex items-center gap-2">
+                                <span class="text-orange-400">1.</span> Lightweight Checkout (Stripe / Gumroad)
+                            </h4>
+                            <p class="text-slate-300 text-xs leading-relaxed">
+                                You can embed a simple "Buy Now" button from platforms like <strong>Gumroad</strong> or <strong>Stripe Payment Links</strong>. When a reader purchases, they instantly receive a secure download link for your PDF or EPUB file. No complex shopping cart needed!
+                            </p>
+                        </div>
+                        <div class="bg-slate-800 p-6 rounded-2xl border border-slate-700">
+                            <h4 class="font-bold text-white mb-2 text-base flex items-center gap-2">
+                                <span class="text-orange-400">2.</span> Dedicated Publishing Platforms
+                            </h4>
+                            <p class="text-slate-300 text-xs leading-relaxed">
+                                You can also publish through platforms like <strong>Amazon Kindle Direct Publishing (KDP)</strong> or <strong>Apple Books</strong> for global reach, while embedding direct purchase links on this website.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Notification Form -->
+                    <div class="bg-white text-slate-800 p-8 rounded-2xl shadow-md">
+                        <h4 class="font-bold text-xl mb-2">Join the Launch Notification List</h4>
+                        <p class="text-slate-600 text-sm mb-6">
+                            Be the first to know when <em>Beyond the Touchline</em> is released and get early access to sample chapters and eBook pre-orders.
+                        </p>
+                        <form onsubmit="handleNewsletterSubmit(event)" class="flex flex-col sm:flex-row gap-3">
+                            <input type="email" id="subscriber-email" placeholder="Enter your email address..." required class="flex-grow px-4 py-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500">
+                            <button type="submit" class="bg-orange-600 hover:bg-orange-700 text-white font-bold text-xs uppercase tracking-wider px-6 py-3 rounded-xl transition shadow">
+                                Notify Me
+                            </button>
+                        </form>
+                        <div id="newsletter-success" class="hidden mt-4 p-3 bg-green-100 text-green-800 rounded-xl text-xs font-semibold text-center">
+                            Thank you! We have added your email to the publication announcement list.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </section>
 
     </main>
@@ -363,16 +446,16 @@
     <footer class="bg-white border-t border-slate-200 py-16 mt-20">
         <div class="max-w-6xl mx-auto px-6 text-center">
             <h2 class="serif-heading text-3xl mb-2">Alex Stuart</h2>
-            <p class="text-xs tracking-widest uppercase text-slate-400 mb-12">Born 1940 • Civic Service 1980–2001 • Still Striving For Change</p>
+            <p class="text-xs tracking-widest uppercase text-slate-400 mb-12">Born 1940 • Civic Service 1980–2001 • Memoir in Progress (2026)</p>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-left text-slate-500 text-xs leading-relaxed mb-12">
                 <div>
                     <h4 class="font-bold text-slate-800 uppercase mb-4 tracking-wider">Copyright Notice</h4>
-                    <p>© 2024 Stuart Family Archive. All rights reserved. No part of this interactive biography may be reproduced or transmitted in any form without prior written permission from the estate.</p>
+                    <p>© 2026 Stuart Family Archive. All rights reserved. No part of this interactive biography or upcoming manuscript may be reproduced without prior written permission.</p>
                 </div>
                 <div>
                     <h4 class="font-bold text-slate-800 uppercase mb-4 tracking-wider">Image Attributions</h4>
-                    <p>All family photographs provided by the Stuart Family. Historical action photography and civic event imagery are used with permission/licence from local press archives. Specific credits are indicated on individual items.</p>
+                    <p>All family photographs provided by the Stuart Family. Historical action photography and civic event imagery are used with permission/licence from local press archives.</p>
                 </div>
                 <div>
                     <h4 class="font-bold text-slate-800 uppercase mb-4 tracking-wider">Historical Accuracy</h4>
@@ -390,7 +473,10 @@
             document.getElementById(sectionId).classList.remove('hidden');
 
             document.querySelectorAll('.nav-link').forEach(btn => btn.classList.remove('active', 'text-slate-800'));
-            document.getElementById('btn-' + sectionId).classList.add('active', 'text-slate-800');
+            const activeBtn = document.getElementById('btn-' + sectionId);
+            if (activeBtn) {
+                activeBtn.classList.add('active', 'text-slate-800');
+            }
 
             if (sectionId === 'football') {
                 initCharts();
@@ -425,6 +511,15 @@
                     }
                 }
             });
+        }
+
+        function handleNewsletterSubmit(event) {
+            event.preventDefault();
+            const email = document.getElementById('subscriber-email').value;
+            if (email) {
+                document.getElementById('newsletter-success').classList.remove('hidden');
+                document.getElementById('subscriber-email').value = '';
+            }
         }
 
         window.onload = () => {
